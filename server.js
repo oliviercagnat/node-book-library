@@ -7,6 +7,7 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const authorsRouter = require('./routes/authors');
@@ -26,6 +27,9 @@ app.set('layout', 'layouts/layout');
 
 // we tell our pap we want to use express layouts
 app.use(expressLayouts);
+
+// Permit to override method for edit and delete form in the views
+app.use(methodOverride('_method'));
 
 // tell where our public file is going to be (style, scripts, images)
 // often use public as folder name for public file
