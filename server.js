@@ -10,6 +10,8 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const authorsRouter = require('./routes/authors');
+const booksRouter = require('./routes/books');
+
 
 // configuring the express app
 // We use ejs as views engine
@@ -48,9 +50,10 @@ db.once('open', () => console.log('Connected to Mongoose'));
 // Connect the routes to the app
 app.use('/', indexRouter);
 app.use('/authors', authorsRouter);
+app.use('/books', booksRouter);
 
 // tell our app we wanna listen
 // from environment variable, server tells us which port we listen to
 // for development, would be 3000
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);
 
