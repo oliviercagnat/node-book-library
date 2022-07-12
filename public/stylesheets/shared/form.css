@@ -23,8 +23,8 @@
   }
   
   .form-item-no-grow {
-    /* flex-grow: 0; */
-    height: 7rem;
+    flex-grow: 0;
+    /* height: 7rem; */
   }
   
   .form-row-end {
